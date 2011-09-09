@@ -1,5 +1,7 @@
 package com.vgs.pim;
 
+import com.vgs.pim.AppTest;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
