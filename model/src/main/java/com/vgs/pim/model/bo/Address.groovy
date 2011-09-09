@@ -6,9 +6,8 @@ class Address {
 	String address2
 	String zipCode
 	String state
-	String country
+	GenericBusinessObject country
 	String homePhone
 	String workPhone
 	String mobilePhone
-	
 }

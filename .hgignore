@@ -1,0 +1,15 @@
+syntax: glob
+*.class
+
+
+syntax: regexp
+^src/main/java/com/vgs/pim/h2$
+^src/main/java/com/vgs/pim/derby$
+\.form$
+\.db$
+^\.classpath$
+^\.project$
+^\.settings
+\.log$
+^target$
+^\.class$
