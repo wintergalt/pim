@@ -1,21 +1,16 @@
 package com.vgs.pim.ui;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JSeparator;
-import javax.swing.JToolBar;
 
-public class MainWindow extends JPanel {
+public class MainMenu extends JMenuBar {
 	
-	public MainWindow() {
-
-		JMenuBar menuBar = new JMenuBar();
+	public MainMenu() {
+		
 		JMenu mnFile = new JMenu("File");
-		menuBar.add(mnFile);
+		add(mnFile);
 
 		JMenuItem mntmOpen = new JMenuItem("Open...");
 		mnFile.add(mntmOpen);
@@ -27,13 +22,16 @@ public class MainWindow extends JPanel {
 		mnFile.add(mntmExit);
 
 		JMenu mnEdit = new JMenu("Edit");
-		menuBar.add(mnEdit);
+		add(mnEdit);
+
+		JMenuItem mntmContacts = new JMenuItem("Contacts");
+		mnEdit.add(mntmContacts);
 
 		JMenu mnTools = new JMenu("Tools");
-		menuBar.add(mnTools);
+		add(mnTools);
 
 		JMenu mnHelp = new JMenu("Help");
-		menuBar.add(mnHelp);
+		add(mnHelp);
 
 		JMenuItem mntmHelpContents = new JMenuItem("Help contents");
 		mnHelp.add(mntmHelpContents);
@@ -44,10 +42,6 @@ public class MainWindow extends JPanel {
 		JMenuItem mntmAbout = new JMenuItem("About...");
 		mnHelp.add(mntmAbout);
 
-		JToolBar toolBar = new JToolBar();
-		add(toolBar, BorderLayout.NORTH);
-
-		add(menuBar, BorderLayout.NORTH);
 	}
 
 }
