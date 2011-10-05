@@ -1,9 +1,13 @@
 package com.vgs.pim.ui;
 
-import java.awt.BorderLayout;
-import java.util.prefs.Preferences;
+import java.awt.BorderLayout
+import java.util.prefs.Preferences
 
-import javax.swing.JFrame;
+import javax.swing.JFrame
+
+import com.vgs.pim.ui.mainpanel.MainMenu
+import com.vgs.pim.ui.mainpanel.MainPanel
+import com.vgs.pim.ui.mainpanel.MainToolbar
 
 class Pim {
 

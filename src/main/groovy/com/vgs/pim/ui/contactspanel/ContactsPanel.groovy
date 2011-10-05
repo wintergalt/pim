@@ -1,4 +1,4 @@
-package com.vgs.pim.ui;
+package com.vgs.pim.ui.contactspanel;
 
 import java.awt.BorderLayout;
 

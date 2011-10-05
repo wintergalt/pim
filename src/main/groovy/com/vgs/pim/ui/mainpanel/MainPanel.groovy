@@ -1,4 +1,4 @@
-package com.vgs.pim.ui;
+package com.vgs.pim.ui.mainpanel;
 
 import javax.swing.JPanel;
 import javax.swing.JToolBar;

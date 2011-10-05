@@ -13,7 +13,6 @@ import com.vgs.pim.ui.Pim;
 class UiUtils {
 
 	public static ImageIcon getIcon(String imageName, Object o) {
-		log.info("imageName: ${imageName}")
 		String imagePath = "com/vgs/pim/ui/images/" + imageName
 		ClassLoader cl = o.getClass().getClassLoader()
 		URL url = cl.getResource(imagePath)
@@ -22,10 +21,8 @@ class UiUtils {
 
 	public static String getMessage(String key) {
 		Locale locale = new Locale(Pim.getUserPreferences().get("lang", "ES").toLowerCase())
-		log.info(locale.toString())
 		ResourceBundle captions = ResourceBundle.getBundle(
 				"com.vgs.pim.ui.messages",locale)
 		captions.getString(key)
-		
 	}
 }
