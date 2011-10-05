@@ -10,7 +10,6 @@ public class ContactsPanel extends JPanel {
 	
 	public ContactsPanel() {
 		this.setLayout(new BorderLayout())
-		
 	}	
 
 }
