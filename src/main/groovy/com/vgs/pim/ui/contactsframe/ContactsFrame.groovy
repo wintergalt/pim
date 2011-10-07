@@ -35,6 +35,7 @@ class ContactsFrame extends JInternalFrame {
 		if(!instance) {
 			instance = new ContactsFrame(title, true, true, true, false)
 			instance.setSize(100, 100)
+			instance.setLocation(50, 50)
 		}
 		instance
 	}
