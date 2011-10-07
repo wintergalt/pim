@@ -1,25 +1,19 @@
 package com.vgs.pim.ui.mainpanel;
 
-import javax.swing.JPanel;
-import javax.swing.JToolBar;
+import javax.swing.JPanel
 
-public class MainPanel extends JPanel {
+import com.vgs.pim.ui.mainpanel.action.OpenContactsFrameAction
+
+class MainPanel extends JPanel {
+
+	def static actions = [:]
 
 	public MainPanel() {
-
-		//add(menuBar, BorderLayout.NORTH);
-		
-		JToolBar toolBar = new JToolBar();
-		//add(toolBar, BorderLayout.NORTH);
-
-		
-//		JPanel menuPanel = new JPanel();
-//		menuPanel.setLayout(new BorderLayout());
-//		menuPanel.add(menuBar, BorderLayout.NORTH);
-//		menuPanel.add(toolBar, BorderLayout.SOUTH);
-		
-//		add(menuPanel, BorderLayout.NORTH);
-
+		loadActions()
 	}
-
+	
+	private void loadActions() {
+		actions.add("openContactsFrameAction", new OpenContactsFrameAction())
+	}
+	
 }

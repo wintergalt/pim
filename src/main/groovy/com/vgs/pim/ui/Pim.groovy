@@ -1,33 +1,37 @@
 package com.vgs.pim.ui;
 
-import java.awt.BorderLayout
+import groovy.util.logging.Log
+
+import java.beans.PropertyVetoException
 import java.util.prefs.Preferences
 
-import javax.swing.JFrame
+import javax.swing.JDesktopPane
+import javax.swing.JInternalFrame
 
-import com.vgs.pim.ui.mainpanel.MainMenu
-import com.vgs.pim.ui.mainpanel.MainPanel
-import com.vgs.pim.ui.mainpanel.MainToolbar
+import com.vgs.pim.ui.mainpanel.MainFrame
 
+@Log
 class Pim {
 
-	private static Preferences userPreferences;
+	private static Preferences userPreferences
+	static Pim currentInstance
+	private JDesktopPane desktop
+	private MainFrame mainFrame
+	
 
 	public static void main(String[] args) {
-		Pim pim = new Pim()
-		pim.go()
+		currentInstance = new Pim()
+		currentInstance.go()
+	}
+
+	private Pim() {
 	}
 
 	private void go() {
 		loadPreferences()
 		setDefaultPreferences()
-		JFrame frame = new JFrame()
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
-		frame.setContentPane(new MainPanel())
-		frame.setSize(600, 400)
-		frame.setJMenuBar(new MainMenu())
-		frame.add(new MainToolbar(), BorderLayout.PAGE_START)
-		frame.setVisible(true)
+		desktop = new JDesktopPane()
+		mainFrame = new MainFrame(desktop)
 	}
 
 	private void setDefaultPreferences() {
@@ -43,4 +47,15 @@ class Pim {
 	public static Preferences getUserPreferences() {
 		return userPreferences
 	}
+
+	public void showFrame(JInternalFrame internalFrame) {
+		internalFrame.setVisible(true)
+		desktop.add(internalFrame)
+		try {
+			internalFrame.setSelected(true)
+		} catch(PropertyVetoException pve) {
+			log.info("Error showing frame: " + internalFrame.getClass(), pve)
+		}
+	}
+	
 }
