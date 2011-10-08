@@ -53,8 +53,6 @@ class Pim {
 		desktop.add(internalFrame)
 		try {
 			internalFrame.setSelected(true)
-			internalFrame.pack()
-			mainFrame.pack()
 		} catch(PropertyVetoException pve) {
 			log.info("Error showing frame: " + internalFrame.getClass(), pve)
 		}

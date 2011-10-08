@@ -1,6 +1,5 @@
 package com.vgs.pim.model.bo
 
-import org.hibernate.cfg.ExtendsQueueEntry;
 
 class User {
 
